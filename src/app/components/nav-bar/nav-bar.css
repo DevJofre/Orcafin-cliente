@@ -37,6 +37,7 @@
 .navbar-actions {
   display: flex;
   align-items: center;
+  gap: 8px;
 }
 
 .navbar-actions button[mat-icon-button] {
