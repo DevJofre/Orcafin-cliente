@@ -1,0 +1,89 @@
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  height: 60px;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo {
+  height: 50px;
+  margin-right: 10px;
+}
+
+.navbar-title-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar-title {
+  margin: 0;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.navbar-subtitle {
+  margin: 0;
+  font-size: 0.8em;
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.navbar-actions button[mat-icon-button] {
+  color: white;
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+
+  transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.navbar-actions button[mat-icon-button]:hover {
+  transform: scale(1.15);
+}
+
+.navbar-actions button[mat-icon-button]:focus {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: scale(1.15);
+  outline: none;
+}
+
+.navbar-actions mat-icon {
+}
+
+.mat-icon {
+  font-family: 'Material Symbols Outlined', 'Material Icons', sans-serif !important;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: 'liga';
+}
