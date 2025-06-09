@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { NavBar } from '../nav-bar/nav-bar';
 
 interface Produto {
   codigo: string;
@@ -13,7 +14,7 @@ interface Produto {
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, NavBar],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })

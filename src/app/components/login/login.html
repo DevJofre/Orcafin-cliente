@@ -1,27 +1,34 @@
-<body>
-    <div class="login-container">
-        <div class="login-box">
-            <h1 class="title">LOGIN</h1>
+<div class="login-container">
+    <div class="login-box">
+        <h1 class="title">LOGIN</h1>
 
-            <div class="section-with-blue-bar">
-                <div class="blue-bar">
-                    <span class="blue-bar-text">CÓDIGO DO FUNCIONÁRIO</span>
-                </div>
-                <div class="input-group-content">
-                    <input id="employeeCode" type="number" [(ngModel)]="employeeCode" placeholder="Digite o código do funcionário" maxlength="8" />
-                </div>
+        <div class="section-with-blue-bar">
+            <div class="blue-bar">
+                <span class="blue-bar-text">CÓDIGO DO FUNCIONÁRIO</span>
             </div>
-
-            <div class="section-with-blue-bar">
-                <div class="blue-bar">
-                    <span class="blue-bar-text">SENHA</span>
-                </div>
-                <div class="input-group-content">
-                    <input id="password" type="password" [(ngModel)]="password" placeholder="Digite sua senha" />
-                </div>
+            <div class="input-group-content">
+            <input
+              id="employeeCode"
+              type="number"
+              [(ngModel)]="employeeCode"
+              placeholder="Digite o código do funcionário"
+              maxlength="8" />
             </div>
-
-            <button class="login-button" (click)="login()">ENTRAR</button>
         </div>
+
+        <div class="section-with-blue-bar">
+            <div class="blue-bar">
+                <span class="blue-bar-text">SENHA</span>
+            </div>
+            <div class="input-group-content">
+                <input
+                  id="password"
+                  type="password"
+                  [(ngModel)]="password"
+                  placeholder="Digite sua senha"
+                />
+            </div>
+        </div>
+        <button class="login-button" (click)="login()">ENTRAR</button>
     </div>
-</body>
+</div>

@@ -1,112 +1,130 @@
+<app-nav-bar></app-nav-bar>
 <div class="container">
-        <div class="header-box">
-            <h1 class="title">CAIXA LIVRE</h1>
+  <div class="header-box">
+    <h1 class="title">CAIXA LIVRE</h1>
+  </div>
+
+  <div class="main-content">
+    <div class="left-panel">
+      <div class="top-left-section">
+        <div class="product-image-box">
+          <span>[Imagem do produto]</span>
         </div>
 
-        <div class="main-content">
-            <div class="left-panel">
-                <div class="top-left-section">
-                    <div class="product-image-box">
-                        <span>[Imagem do produto]</span>
-                    </div>
-
-                    <div class="input-fields-wrapper">
-                        <div class="section-with-blue-bar">
-                            <div class="blue-bar">
-                                <span class="blue-bar-text">CÓDIGO DE BARRAS</span>
-                            </div>
-                            <div class="input-group-content">
-                                <input id="codigoBarras" [(ngModel)]="codigoBarras" (keyup.enter)="adicionarProduto()" />
-                            </div>
-                        </div>
-
-                        <div class="section-with-blue-bar">
-                            <div class="blue-bar">
-                                <span class="blue-bar-text">VALOR UNITÁRIO</span>
-                            </div>
-                            <div class="input-group-content">
-                                <input id="valorUnitario" type="number" [(ngModel)]="valorUnitario" (input)="calcularTotalItem()" />
-                            </div>
-                        </div>
-
-                        <div class="section-with-blue-bar">
-                            <div class="blue-bar">
-                                <span class="blue-bar-text">TOTAL DO ITEM</span>
-                            </div>
-                            <div class="input-group-content">
-                                <input id="totalItem" [value]="totalItem | number:'1.2-2'" disabled />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="codigo">
-                    <label>CÓDIGO</label>
-                    <div class="codigo-box">91964</div>
-                </div>
-
-                <div class="teclas-funcao">
-                    <div class="col">
-                        <p>F2 - Código Interno</p>
-                        <p>F4 - Inserir Quantidade</p>
-                        <p>F6 - Gaveta</p>
-                    </div>
-                    <div class="col">
-                        <p>F8 - Pesquisar Produto</p>
-                        <p>F10 - Alterar Venda</p>
-                        <p>F11 - Excluir Venda</p>
-                    </div>
-                    <div class="col">
-                        <p>Ctrl+D - CPF</p>
-                        <p>Ctrl+P - Preço Produto</p>
-                        <p>F12 - Indicar Cliente</p>
-                    </div>
-                </div>
+        <div class="input-fields-wrapper">
+          <div class="section-with-blue-bar">
+            <div class="blue-bar">
+              <span class="blue-bar-text">CÓDIGO DE BARRAS</span>
             </div>
-
-            <div class="right-panel">
-                <div class="section-with-blue-bar">
-                    <div class="blue-bar">
-                        <span class="blue-bar-text">LISTA DE PRODUTOS</span>
-                    </div>
-                    <div class="tabela-produtos">
-                        <div class="tabela-header">
-                            <span>Item</span>
-                            <span>Código de Barras</span>
-                            <span>Descrição</span>
-                            <span>Qtd</span>
-                            <span>Un.</span>
-                            <span>Vlr. Unit</span>
-                            <span>Total</span>
-                        </div>
-                        <div class="tabela-body">
-                            <div *ngFor="let p of produtos; let i = index">
-                                <span>{{ i + 1 }}</span>
-                                <span>{{ p.codigo }}</span>
-                                <span>{{ p.descricao }}</span>
-                                <span>{{ p.qtd }}</span>
-                                <span>un</span>
-                                <span>{{ p.valorUnitario | number:'1.2-2' }}</span>
-                                <span>{{ p.total | number:'1.2-2' }}</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="resumo">
-                    <div class="resumo-row">
-                        <label>SUBTOTAL</label>
-                        <span>{{ subtotal | number:'1.2-2' }}</span>
-                    </div>
-                    <div class="resumo-row">
-                        <label>TOTAL RECEBIDO</label>
-                        <input type="number" [(ngModel)]="totalRecebido" (input)="calcularTroco()" />
-                    </div>
-                    <div class="resumo-row">
-                        <label>TROCO</label>
-                        <span>{{ troco | number:'1.2-2' }}</span>
-                    </div>
-                </div>
+            <div class="input-group-content">
+              <input
+                id="codigoBarras"
+                [(ngModel)]="codigoBarras"
+                (keyup.enter)="adicionarProduto()"
+              />
             </div>
+          </div>
+
+          <div class="section-with-blue-bar">
+            <div class="blue-bar">
+              <span class="blue-bar-text">VALOR UNITÁRIO</span>
+            </div>
+            <div class="input-group-content">
+              <input
+                id="valorUnitario"
+                type="number"
+                [(ngModel)]="valorUnitario"
+                (input)="calcularTotalItem()"
+              />
+            </div>
+          </div>
+
+          <div class="section-with-blue-bar">
+            <div class="blue-bar">
+              <span class="blue-bar-text">TOTAL DO ITEM</span>
+            </div>
+            <div class="input-group-content">
+              <input
+                id="totalItem"
+                [value]="totalItem | number:'1.2-2'"
+                disabled
+              />
+            </div>
+          </div>
         </div>
+      </div>
+
+      <div class="codigo">
+        <label>CÓDIGO</label>
+        <div class="codigo-box">91964</div>
+      </div>
+
+      <div class="teclas-funcao">
+        <div class="col">
+          <p>F2 - Código Interno</p>
+          <p>F4 - Inserir Quantidade</p>
+          <p>F6 - Gaveta</p>
+        </div>
+        <div class="col">
+          <p>F8 - Pesquisar Produto</p>
+          <p>F10 - Alterar Venda</p>
+          <p>F11 - Excluir Venda</p>
+        </div>
+        <div class="col">
+          <p>Ctrl+D - CPF</p>
+          <p>Ctrl+P - Preço Produto</p>
+          <p>F12 - Indicar Cliente</p>
+        </div>
+      </div>
     </div>
+
+    <div class="right-panel">
+      <div class="section-with-blue-bar">
+        <div class="blue-bar">
+          <span class="blue-bar-text">LISTA DE PRODUTOS</span>
+        </div>
+        <div class="tabela-produtos">
+          <div class="tabela-header">
+            <span>Item</span>
+            <span>Código de Barras</span>
+            <span>Descrição</span>
+            <span>Qtd</span>
+            <span>Un.</span>
+            <span>Vlr. Unit</span>
+            <span>Total</span>
+          </div>
+          <div class="tabela-body">
+            <div *ngFor="let p of produtos; let i = index">
+              <span>{{ i + 1 }}</span>
+              <span>{{ p.codigo }}</span>
+              <span>{{ p.descricao }}</span>
+              <span>{{ p.qtd }}</span>
+              <span>un</span>
+              <span>{{ p.valorUnitario | number:'1.2-2' }}</span>
+              <span>{{ p.total | number:'1.2-2' }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="resumo">
+        <div class="resumo-row">
+          <label>SUBTOTAL</label>
+          <span>{{ subtotal | number:'1.2-2' }}</span>
+        </div>
+        <div class="resumo-row">
+          <label>TOTAL RECEBIDO</label>
+          <input
+            type="number"
+            [(ngModel)]="totalRecebido"
+            (input)="calcularTroco()"
+          />
+        </div>
+        <div class="resumo-row">
+          <label>TROCO</label>
+          <span>{{ troco | number:'1.2-2' }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
