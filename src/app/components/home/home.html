@@ -71,7 +71,7 @@
           <p>F11 - Excluir Venda</p>
         </div>
         <div class="col">
-          <p> Ctrl + 3 - Codigo Interno</p>
+          <p>Ctrl + 3 - Codigo Interno</p>
           <p>Ctrl+P - Preço Produto</p>
           <p>F12 - Indicar Cliente</p>
         </div>
@@ -92,16 +92,17 @@
             <span>Un.</span>
             <span>Vlr. Unit</span>
             <span>Total</span>
-          </div>
+            <span class="acao-header">Ação</span> </div>
           <div class="tabela-body">
-            <div *ngFor="let p of produtos; let i = index">
-              <span>{{ i + 1 }}</span>
+            <div *ngFor="let p of produtos; let i = index" class="tabela-row"> <span>{{ i + 1 }}</span>
               <span>{{ p.codigo }}</span>
               <span>{{ p.descricao }}</span>
               <span>{{ p.qtd }}</span>
               <span>un</span>
               <span>{{ p.valorUnitario | number:'1.2-2' }}</span>
               <span>{{ p.total | number:'1.2-2' }}</span>
+              <span class="acao-col"> <button class="cancel-button" (click)="removerProduto(i)">Cancelar</button>
+              </span>
             </div>
           </div>
         </div>
@@ -127,4 +128,22 @@
       </div>
     </div>
   </div>
+</div>
+
+<div class="modal-overlay" *ngIf="showAdminCodeModal">
+    <div class="modal-content">
+        <h3>CANCELAR PRODUTO</h3>
+        <p>Para cancelar o produto, digite o código de administrador:</p>
+        <input
+          type="password"
+          [(ngModel)]="adminCodeInput"
+          keyup.enter)="confirmAdminCode()"
+          placeholder="****"
+        />
+        <div class="modal-message">{{ adminCodeMessage }}</div>
+        <div class="modal-buttons">
+          <button class="modal-button confirm" (click)="confirmAdminCode()">Confirmar</button>
+          <button class="modal-button cancel" (click)="cancelAdminCodeInput()">Cancelar</button>
+        </div>
+    </div>
 </div>
